@@ -1,0 +1,7 @@
+[repo]
+name = "mixu-gradle"
+kind = "build-logic"
+lang = "kotlin"
+visibility = "public"
+license = "Apache-2.0"
+role = "shared Gradle convention plugins and the single version catalog; consumed as a submodule"
