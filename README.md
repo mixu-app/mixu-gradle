@@ -56,6 +56,21 @@ plugins {
 5. **The sample must keep compiling.** If the conventions break, `./gradlew build`
    in this repository fails before any consumer notices.
 
+## Network
+
+`./gradlew` downloads its distribution on first use, and the dependency
+repositories are `mavenCentral()` and `google()`. On a network where
+`services.gradle.org` or `dl.google.com` is unreachable, seed the distribution once
+from a mirror and keep the repository URLs unchanged:
+
+```sh
+D=$(find ~/.gradle/wrapper/dists/gradle-9.8.2-bin -maxdepth 1 -mindepth 1 -type d)
+curl -L -o "$D/gradle-9.8.2-bin.zip" https://mirrors.cloud.tencent.com/gradle/gradle-9.8.2-bin.zip
+./gradlew --version
+```
+
+CI runners have direct access, so the committed `distributionUrl` stays official.
+
 ## Gates
 
 ```sh
