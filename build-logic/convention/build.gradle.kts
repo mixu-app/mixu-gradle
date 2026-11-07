@@ -17,4 +17,5 @@ dependencies {
     implementation(libs.kotlin.compose.compiler.plugin)
     implementation(libs.android.gradle.plugin)
     implementation(libs.compose.gradle.plugin)
+    implementation(libs.ktlint.gradle.plugin)
 }

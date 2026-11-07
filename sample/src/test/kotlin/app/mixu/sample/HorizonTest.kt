@@ -1,12 +1,11 @@
 package app.mixu.sample
 
 import kotlin.test.Test
+import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
-import kotlin.test.assertFailsWith
 
 class HorizonTest {
-
     @Test
     fun `reveals only what the horizon covers`() {
         val horizon = Horizon(3)
