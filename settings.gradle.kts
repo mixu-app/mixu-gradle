@@ -22,3 +22,4 @@ rootProject.name = "mixu-gradle"
 // build so `./gradlew build` in CI is a real signal, not a lint of YAML.
 include(":sample")
 include(":sample-android")
+include(":sample-compose")
