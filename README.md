@@ -13,7 +13,7 @@ offline.
 | Path | Purpose |
 |---|---|
 | `gradle/libs.versions.toml` | Every version used by any Kotlin repository (the only place a version is written) |
-| `build-logic/convention/` | Precompiled script plugins: `mixu.kotlin.jvm`, `mixu.kotlin.multiplatform`, `mixu.android.library`, `mixu.android.application`, `mixu.compose`, `mixu.reproducible` |
+| `build-logic/convention/` | Precompiled script plugins: `mixu.kotlin.jvm`, `mixu.kotlin.multiplatform`, `mixu.android.library`, `mixu.android.application`, `mixu.compose`, `mixu.quality`, `mixu.reproducible` |
 | `sample/`, `sample-android/`, `sample-compose/` | Modules that apply the conventions, so CI proves they compile and test |
 
 ## Using it from a repository
@@ -70,6 +70,13 @@ curl -L -o "$D/gradle-9.8.2-bin.zip" https://mirrors.cloud.tencent.com/gradle/gr
 ```
 
 CI runners have direct access, so the committed `distributionUrl` stays official.
+
+## Quality and formatting
+
+Modules applying `id("mixu.quality")` enforce style consistency via ktlint:
+
+- `ktlintCheck`: runs during `./gradlew check` / `./gradlew build` and fails on formatting violations.
+- `ktlintFormat`: automatically formats Kotlin source files to conform to style rules.
 
 ## Gates
 

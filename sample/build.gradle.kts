@@ -1,5 +1,6 @@
 plugins {
     id("mixu.kotlin.jvm")
+    id("mixu.quality")
     id("mixu.reproducible")
 }
 
