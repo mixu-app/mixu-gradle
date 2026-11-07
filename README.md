@@ -13,8 +13,8 @@ offline.
 | Path | Purpose |
 |---|---|
 | `gradle/libs.versions.toml` | Every version used by any Kotlin repository (the only place a version is written) |
-| `build-logic/convention/` | Precompiled script plugins: `mixu.kotlin.jvm`, `mixu.kotlin.multiplatform`, `mixu.reproducible` |
-| `sample/` | A module that applies the conventions, so CI proves they compile |
+| `build-logic/convention/` | Precompiled script plugins: `mixu.kotlin.jvm`, `mixu.kotlin.multiplatform`, `mixu.android.library`, `mixu.android.application`, `mixu.reproducible` |
+| `sample/`, `sample-android/` | Modules that apply the conventions, so CI proves they compile and test |
 
 ## Using it from a repository
 
