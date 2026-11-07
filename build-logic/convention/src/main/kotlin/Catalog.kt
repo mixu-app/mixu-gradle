@@ -13,3 +13,9 @@ import org.gradle.kotlin.dsl.getByType
  */
 internal val Project.mixuCatalog: VersionCatalog
     get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
+internal fun Project.findVersionInt(name: String): Int =
+    mixuCatalog.findVersion(name)
+        .orElseThrow { IllegalStateException("Version '$name' not found in catalog") }
+        .requiredVersion
+        .toInt()

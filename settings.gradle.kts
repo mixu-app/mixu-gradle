@@ -18,6 +18,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "mixu-gradle"
 
-// The sample module exists to prove the conventions compile. It is part of the
+// The sample modules exist to prove the conventions compile. They are part of the
 // build so `./gradlew build` in CI is a real signal, not a lint of YAML.
 include(":sample")
+include(":sample-android")
