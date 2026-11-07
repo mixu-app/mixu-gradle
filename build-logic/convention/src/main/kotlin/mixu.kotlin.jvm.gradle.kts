@@ -2,6 +2,7 @@
 //
 // Consumers apply `id("mixu.kotlin.jvm")` and set nothing else: toolchain, compiler
 // flags, test framework and reproducibility settings are decided here, once.
+import app.mixu.gradle.mixuCatalog
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -32,8 +33,9 @@ tasks.withType<Test>().configureEach {
     }
 }
 
+val catalog = mixuCatalog
 dependencies {
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.platform.launcher)
+    testImplementation(catalog.findLibrary("kotlin-test").get())
+    testImplementation(catalog.findLibrary("junit-jupiter").get())
+    testRuntimeOnly(catalog.findLibrary("junit-platform-launcher").get())
 }
