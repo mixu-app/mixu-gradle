@@ -2,6 +2,7 @@ plugins {
     id("mixu.kotlin.jvm")
     id("mixu.quality")
     id("mixu.reproducible")
+    id("mixu.maven.publish")
 }
 
 group = "app.mixu.sample"
